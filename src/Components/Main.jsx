@@ -5,6 +5,8 @@ const Main = () => {
   const [input, setInput] = useState("0")
   const [prev, setprev] = useState("")
   const handleClick = (value) => {
+    const audio = new Audio('/Sound.mp3');
+     audio.play();
     if (value === "Ac") {
       if(input=="0"){
         setprev("")
@@ -27,7 +29,7 @@ const Main = () => {
   }
 
   return (
-    <div className='flex flex-col p-5 items-center py-6 h-full md:w-[20rem] w-[15rem] xl:w-1/4 justify-between rounded-3xl backdrop-blur-2xl bg-blue-800/20 shadow-lg shadow-black'>
+    <div className='flex flex-col p-5 items-center py-6 h-fit  md:w-[17rem] w-[15rem] xl:w-1/4 justify-between rounded-3xl backdrop-blur-2xl bg-blue-800/20 shadow-lg shadow-black'>
        <input 
         type="text"  
         value={prev}
@@ -41,7 +43,7 @@ const Main = () => {
         readOnly
       />
 
-      <div className='h-[70%] gap-2 p-2 w-full grid grid-cols-4 items-center'>
+      <div className=' p-2 w-full grid grid-cols-4 items-center'>
         <Button value="Ac" onClick={() => handleClick("Ac")} bgColor='bg-orange-500'/>
         <Button value="Del" onClick={() => handleClick("Del")}/>
         <Button value="/" onClick={() => handleClick("/")} />  
